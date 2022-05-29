@@ -1,0 +1,42 @@
+clear all
+
+%if rotation=0, there's no rotation. Else the basis is rotated to
+%diagonalize the density matrix. Note that this is specific to TiCl2 where
+%all the d orbitals of one atom are 
+rotation=0
+
+EF= 8.3283;
+%EF=17
+
+kgrid=[20 20 20];
+hamfilename='ticl2_hr.dat'
+orbitals=[1:5];
+xout=[-5:0.01:5];
+smearing=0.02
+soc=1;
+R=[0 0 0]
+[ norbu,yorbu,ntotu,ytotu ,rho,rhoe,rhov, Hrask,Hrrot] = GetPdosAndNFromWan(rotation, hamfilename, kgrid, orbitals , EF, smearing, xout,soc,1,R );
+%plot(ytotu,xout,'LineWidth',10)
+hold on
+
+%Plot PDOS trigonal. Assumes rotation is not set to 0
+%plot(yorbu(:,1),xout,'b',yorbu(:,2),xout,'b',yorbu(:,3),xout,'g',yorbu(:,4),xout,'r',yorbu(:,5),xout,'r','LineWidth',10)
+
+%Plot PDOS as initially read by . Assumes rotation is not set to 0
+plot(yorbu(:,1),xout,'b',yorbu(:,2),xout,'r',yorbu(:,3),xout,'r',yorbu(:,4),xout,'r',yorbu(:,5),xout,'b','LineWidth',10)
+legend('PDOS')
+xlabel('Total PDOS')
+ylabel('E-E_F')
+%axis([0 max(ytot) -3 1])
+set(gca,'fontsize',25)
+
+grid on
+
+
+
+%a=[ [xout]' [ytot]];
+%fid = fopen('IrBulk-LSAT.txt','wt');
+%for ii = 1:size(a,1)
+ %   fprintf(fid,'%g\t',a(ii,:));
+ %   fprintf(fid,'\n');
+%end
