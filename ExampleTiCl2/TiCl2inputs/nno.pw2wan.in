@@ -1,0 +1,8 @@
+&inputpp
+   outdir='./scratch'
+   prefix = 'bulknno'
+   seedname = 'nno'
+   write_mmn = .true.
+   write_amn = .true.
+   write_unk = .true.
+/
