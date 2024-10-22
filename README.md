@@ -1,5 +1,5 @@
 # Wannier90 Hamiltonian Tools
-Simple tools used to manipulate Wannier90 Hamiltonians written by Emily G. Ward and Alexandru B. Georgescu. Please cite the relevant work below if you use it; please note that these tools are under constant improvement and are not meant as production-level code at this point. 
+Simple tools used to manipulate Wannier90 Hamiltonians written by Emily G. Ward and Alexandru B. Georgescu. Please cite the relevant work below if you use it; please note that these tools are under constant improvement. The version of these scripts in the lone pair folder has line by line documentation. 
 
 The simple matlab scripts used here should make it quite easy to verify the accuracy of a Wannier Hamiltonian in fitting a DFT calculation, as well as perform various types of post-processing. This includes, for example, rotation of the orbital basis to obtain a locally diagonal density matrix, which can be particularly important in certain materials, for example in dihalides and trihalides, as shown in our work here: (https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.245153)
 
